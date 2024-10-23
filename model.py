@@ -102,7 +102,7 @@ class TextModel(nn.Module):
 
         if opt.text_model == 'bert-base':
             self.config = BertConfig.from_pretrained(abl_path + 'bert-base-uncased')
-            self.model = BertForPreTraining.from_pretrained(abl_path + 'bert-base-uncased/', config=self.config)
+            self.model = BertForPreTraining.from_pretrained(abl_path + 'bert-base-uncased', config=self.config)
             self.model = self.model.bert
 
         for param in self.model.parameters():
